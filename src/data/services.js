@@ -2,8 +2,8 @@
 export const categories = [
  {id:'commercial',ar:'مطبوعات تجارية',en:'Commercial Prints',desc:'تفاصيل يومية مطبوعة باحترافية تعكس جودة عملك.',icon:'briefcase',color:'blue',image:'/images/services/category-commercial.jpg'},
  {id:'paper',ar:'مطبوعات ورقية',en:'Paper Prints',desc:'من كارت شخصي إلى كتالوج متكامل — كل ورقة لها قيمة.',icon:'layers',color:'yellow',image:'/images/services/category-paper.jpg'},
- {id:'signage',ar:'لوحات إعلانية',en:'Advertising Signs',desc:'خلّي علامتك تتشاف بوضوح في كل مكان.',icon:'panels-top-left',color:'dark',image:'/images/services/category-signage.jpg'},
- {id:'gifts',ar:'هدايا دعائية',en:'Promotional Gifts',desc:'هدايا مميزة تخلّي اسمك حاضرًا في كل مناسبة.',icon:'gift',color:'red',image:'/images/services/category-gifts.jpg'}
+ {id:'signage',ar:'لوحات إعلانية',en:'Advertising Signs',desc:'لوحات وواجهات إعلانية تبرز هوية علامتك التجارية بوضوح واحترافية.',icon:'panels-top-left',color:'dark',image:'/images/services/category-signage.jpg'},
+ {id:'gifts',ar:'هدايا دعائية',en:'Promotional Gifts',desc:'هدايا ترويجية وتذكارية راقية تعزز حضور علامتك وتترك أثراً دائماً.',icon:'gift',color:'red',image:'/images/services/category-gifts.jpg'}
 ];
 const make=(category,items)=>items.map(([slug,ar,en,desc])=>({id:slug,slug,category,ar,en,desc,image:`/images/services/${slug}.jpg`,sizes:['A4','A5','A3','مقاس مخصص'],materials:['حسب الطلب'],colors:['ألوان كاملة','أبيض وأسود'],sides:['وجه واحد','وجهين'],finishing:['بدون تشطيب','سلوفان مطفي','سلوفان لامع']}));
 export const services=[

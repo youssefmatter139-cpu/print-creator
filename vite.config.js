@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/print-creator/', // <-- تم ضبطها باسم المستودع الظاهر في الصورة
+  base: process.env.NODE_ENV === 'production' ? '/print-creator/' : '/',
   server: {
     host: '0.0.0.0',
     port: 5173,

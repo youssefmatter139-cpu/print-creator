@@ -13,7 +13,7 @@ if (rootElement) {
     <React.StrictMode>
       <ErrorBoundary>
         <I18nProvider>
-          <BrowserRouter>
+          <BrowserRouter basename={import.meta.env.BASE_URL}>
             <App />
           </BrowserRouter>
         </I18nProvider>

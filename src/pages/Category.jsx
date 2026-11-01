@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpLeft, CheckCircle2 } from 'lucide-react';
+import { ArrowUpLeft } from 'lucide-react';
 import { services } from '../data/services';
 import ServiceCard from '../components/ServiceCard';
 

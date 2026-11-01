@@ -33,15 +33,16 @@ export class ErrorBoundary extends React.Component {
           padding: '24px',
           fontFamily: "'Cairo', sans-serif",
           textAlign: 'center',
-          backgroundColor: '#f7f8fc',
-          color: '#171922',
+          backgroundColor: '#0b0e14',
+          color: '#f1f5f9',
           direction: 'rtl'
         }}>
           <div style={{
-            background: '#ffffff',
+            background: '#131926',
+            border: '1px solid #1e293b',
             padding: '36px',
-            borderRadius: '20px',
-            boxShadow: '0 16px 45px rgba(20,29,58,0.08)',
+            borderRadius: '16px',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
             maxWidth: '520px',
             width: '100%'
           }}>
@@ -49,28 +50,29 @@ export class ErrorBoundary extends React.Component {
               width: '60px',
               height: '60px',
               borderRadius: '50%',
-              background: '#fff0f1',
-              color: '#e73c45',
+              background: 'rgba(239, 68, 68, 0.12)',
+              border: '1px solid rgba(239, 68, 68, 0.25)',
+              color: '#ef4444',
               display: 'grid',
               placeItems: 'center',
-              fontSize: '28px',
+              fontSize: '24px',
               margin: '0 auto 18px'
             }}>
               ⚠️
             </div>
-            <h2 style={{ fontSize: '22px', margin: '0 0 10px' }}>عفواً، حدث خطأ غير متوقع</h2>
-            <p style={{ fontSize: '14px', color: '#737887', lineHeight: '1.8', margin: '0 0 24px' }}>
-              واجه التطبيق مشكلة أثناء التحميل. يمكنك إعادة تحميل الصفحة أو إعادة تعيين البيانات.
+            <h2 style={{ fontSize: '20px', fontWeight: '800', color: '#f1f5f9', margin: '0 0 10px' }}>عفواً، حدث خطأ غير متوقع</h2>
+            <p style={{ fontSize: '14px', color: '#94a3b8', lineHeight: '1.8', margin: '0 0 24px' }}>
+              واجه التطبيق مشكلة أثناء التحميل. يمكنك إعادة تحميل الصفحة أو إعادة تعيين البيانات للعودة للوضع الطبيعي.
             </p>
             <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
               <button
                 onClick={() => window.location.reload()}
                 style={{
-                  background: '#1f4fd8',
+                  background: '#2563eb',
                   color: '#ffffff',
                   border: 'none',
                   padding: '12px 24px',
-                  borderRadius: '12px',
+                  borderRadius: '10px',
                   fontWeight: '700',
                   fontSize: '14px',
                   cursor: 'pointer'
@@ -81,11 +83,11 @@ export class ErrorBoundary extends React.Component {
               <button
                 onClick={this.handleReset}
                 style={{
-                  background: '#f0f2f7',
-                  color: '#171922',
-                  border: 'none',
+                  background: 'rgba(255, 255, 255, 0.08)',
+                  color: '#cbd5e1',
+                  border: '1px solid #1e293b',
                   padding: '12px 20px',
-                  borderRadius: '12px',
+                  borderRadius: '10px',
                   fontWeight: '700',
                   fontSize: '14px',
                   cursor: 'pointer'

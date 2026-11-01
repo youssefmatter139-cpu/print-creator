@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <header className="header">
       <div className="container nav">
-        <Brand />
+        <Brand onClick={() => setOpen(false)} />
 
         <nav className={open ? 'nav-links open' : 'nav-links'}>
           {links.map(([to, label]) => (
@@ -33,7 +33,7 @@ export default function Header() {
         </nav>
 
         <div className="nav-actions">
-          <Link to="/order" className="btn btn-primary nav-order-btn">
+          <Link to="/order" onClick={() => setOpen(false)} className="btn btn-primary nav-order-btn">
             <span>اطلب الآن</span>
             <ArrowUpLeft size={16} />
           </Link>

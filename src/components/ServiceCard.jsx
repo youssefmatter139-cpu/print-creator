@@ -1,21 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Plus } from 'lucide-react';
 
 export function ImageSlot({ src, alt, large = false }) {
   const [bad, setBad] = useState(false);
 
+  useEffect(() => {
+    setBad(false);
+  }, [src]);
+
   return (
     <div className={'image-slot ' + (large ? 'large' : '')}>
-      {!bad && (
+      {!bad && src && (
         <img
           src={src}
-          alt={alt}
+          alt={alt || 'خدمة طباعة'}
           loading="lazy"
           onError={() => setBad(true)}
         />
       )}
-      {bad && (
-        <div className="image-fallback">
+      {(bad || !src) && (
+        <div className="image-fallback" aria-hidden="true">
           <span className="fallback-logo">PC</span>
           <span>
             PRINT <b>CREATOR</b>
@@ -28,6 +32,8 @@ export function ImageSlot({ src, alt, large = false }) {
 }
 
 export default function ServiceCard({ service, lang = 'ar', onAdd }) {
+  if (!service) return null;
+
   return (
     <article className="service-card">
       <ImageSlot src={service.image} alt={lang === 'ar' ? service.ar : service.en} />
@@ -39,6 +45,7 @@ export default function ServiceCard({ service, lang = 'ar', onAdd }) {
         <h3>{lang === 'ar' ? service.ar : service.en}</h3>
         <p>{service.desc}</p>
         <button
+          type="button"
           className="btn-order-now"
           onClick={() => onAdd(service)}
           aria-label={lang === 'ar' ? `اطلب الآن ${service.ar}` : `Order now ${service.en}`}

@@ -1,1 +1,9 @@
-{"name":"Creator Print","short_name":"Creator Print","start_url":"/","display":"standalone","background_color":"#f7f8fc","theme_color":"#1f4fd8","description":"تصميمات - فصل ألوان - طباعة"}
+{
+  "name": "مطبعة برند كرياتور - Print Creator",
+  "short_name": "برند كرياتور",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0e14",
+  "theme_color": "#2563eb",
+  "description": "تصميمات - فصل ألوان - طباعة تجارية وإعلانية في طنطا"
+}

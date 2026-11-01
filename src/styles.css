@@ -420,6 +420,15 @@ img {
   background: var(--primary);
 }
 
+.visual-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.visual-action {
+  margin-top: 4px;
+}
+
 /* ==================== Category Cards ==================== */
 .category-grid {
   display: grid;
@@ -1311,6 +1320,12 @@ img {
   margin: 0;
 }
 
+.gallery-visual.lightbox-art {
+  height: 260px;
+  border-radius: var(--radius-md);
+  margin-bottom: 8px;
+}
+
 /* ==================== Footer ==================== */
 .footer {
   background: #080a0f;
@@ -1326,6 +1341,11 @@ img {
   gap: 40px;
   padding-bottom: 40px;
   border-bottom: 1px solid var(--line);
+}
+
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-desc {
@@ -1469,6 +1489,9 @@ img {
   }
   .form-grid {
     grid-template-columns: 1fr;
+  }
+  input, select, textarea {
+    font-size: 16px !important;
   }
   .footer-bottom {
     flex-direction: column;

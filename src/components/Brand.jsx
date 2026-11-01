@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Brand() {
+export default function Brand({ onClick }) {
   return (
-    <Link to="/" className="brand" aria-label="مطبعة برند كرياتور - الصفحة الرئيسية">
+    <Link to="/" className="brand" onClick={onClick} aria-label="مطبعة برند كرياتور - الصفحة الرئيسية">
       <div className="brand-badge" aria-hidden="true">
         <span>PC</span>
       </div>

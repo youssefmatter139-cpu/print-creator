@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, Send } from 'lucide-react';
-import { sanitizeText, isValidPhone, buildWhatsAppUrl } from '../lib/security';
+import { sanitizeText, isValidPhone, buildWhatsAppUrl, normalizeDigits } from '../lib/security';
 
 const WHATSAPP_PHONE = '201004071071';
 
@@ -19,13 +19,15 @@ export default function OrderModal({ service, onClose }) {
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  if (!service) return null;
+
   const update = (k, v) => setForm((p) => ({ ...p, [k]: v }));
 
   const submit = (e) => {
     e.preventDefault();
 
     const name = sanitizeText(form.name, 100);
-    const phone = sanitizeText(form.phone, 30);
+    const phone = sanitizeText(normalizeDigits(form.phone), 30);
     const customSize = sanitizeText(form.customSize, 60);
     const quantity = sanitizeText(form.quantity, 60);
     const notes = sanitizeText(form.notes, 500);
@@ -66,11 +68,13 @@ export default function OrderModal({ service, onClose }) {
 
     const whatsappUrl = buildWhatsAppUrl(WHATSAPP_PHONE, messageLines);
 
-    setTimeout(() => {
+    // Synchronous execution avoids mobile browser popup blocker
+    try {
       window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-      setIsSubmitting(false);
-      onClose();
-    }, 250);
+    } catch {}
+
+    setIsSubmitting(false);
+    onClose();
   };
 
   return (
